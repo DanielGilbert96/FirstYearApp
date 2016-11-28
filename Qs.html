@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title> Home </title>
+		<link rel="stylesheet" type="text/css" href="QsCSS.css">
+			
+	</head>
+	
+	<body>
+		<div id ="Wrapper">
+				<h1> This is our fun questions section where we put you into scenarios where you have to solve certain equations in order to save people and earn rewards <h1>
+					<h2>Question 1 </h2>
+					<p>Paul was out grocery shopping and his shopping amounted to E90.55</p>
+					<p>What is the least amount of notes+coins Paul could use to make this payment?
+					
+					<div id="spoiler" style="display:none"> 
+					The Answer is 1 x &euro;50 2 x&euro;20 1 x 50c and 1 x 5c
+					</div> 
+					<button title="Click to show/hide content" class="btn" type="button" id="qs" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show Answer</button>
+					<h2>Question 2</h2>
+					<p>
+					
+					
+					
+					<script type="text/javascript">
+					function countdown(minutes) {
+					var seconds = 60;
+					var mins = minutes
+					function tick() {
+					var counter = document.getElementById("timer");
+					var current_minutes = mins-1
+					seconds--;
+					counter.innerHTML = 
+					current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+					if( seconds > 0 ) {
+					setTimeout(tick, 1000);
+					} else {
+             
+					if(mins > 1){
+                 
+					// countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst    
+					setTimeout(function () { countdown(mins - 1); }, 1000);
+                     
+							}
+						}
+					}
+					tick();
+				}
+				 
+				countdown(2);
+				 
+					</script>
+				<p> QUICK! You have 1:00 Minute to Defuse the bomb by solving this equation!
+					(22-3+10x2) Divided by (14+3-7)
+					<br>
+					<br>
+				<button type ="button" id ="timer" onclick="countdown()">DEFUSE!</button>
+				<p> did you survive? find the answer here 
+				
+					<div id="spoiler2" style="display:none"> 
+					The Solution is 22-3=19 10x2 = 20 19+20 = 39, 14+3 = 17 - 7 = 10, 39/10 = 3.9
+					The Answer is 3.9
+					</div> 
+					<button title="Show" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'}">Show Answer</button>
+					<div id ="wrapper">
+					<h2>Question 3</h2>
+					<p> This ones a toughy!</p>
+				
+					<p>A Train travels at 60km/ph, if the journey to mayo is 150km how long would it take for the train to get there?</p>
+					<p>If the Train took 2 hours to do the same journey what speed was it traveling at?</p>
+					<p>If the Train was traveling at 80km/ph for 3 hours how long did it travel?
+					<p> Tip * Time = Distance/Speed and Speed = Distance/time and Distance = SpeedxTime
+					<div id="spoiler3" style="display:none"> 
+					(i)D/S 150/60 = 2.5 = 2 hours 30 mins 
+					(ii)D/T 150/2 = 75km/ph
+					(iii)SxT 80x3 = 240km
+					</div> 
+					<button title="Show" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'}">Show Answer</button>
+		</div>
+		</div>
+	</body>
+</html>

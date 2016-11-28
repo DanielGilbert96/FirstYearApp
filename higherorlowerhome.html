@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<title>Higher Or Lower</title>
+<script type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("num1")
+	var y = document.getElementById("num2")
+    var sum1 = Math.floor((Math.random() * 500) + 1);
+    var sum2 = Math.floor((Math.random() * 500) + 1);
+	 y.innerHTML = sum2;
+	 x.innerHTML = sum1;
+	 var ans1 = sum1+sum2;
+	 document.getElementById("demo").innerHTML = ans1; 
+}
+function myFunction1() {
+    var x = document.getElementById("num1")
+	var y = document.getElementById("num2")
+    var sum1 = Math.floor((Math.random() * 500) + 1);
+    var sum2 = Math.floor((Math.random() * 500) + 1);
+	 y.innerHTML = sum2;
+	 x.innerHTML = sum1;
+	 var ans2 = sum1+sum2;
+	 document.getElementById("demo").innerHTML = ans2; 
+}
+function lowerFunc() {
+if (ans1 < ans2) {
+myFunction();
+}else {
+    alert('else');
+	}
+}
+function higherFunc() {
+if (ans1 > ans2) {
+myFunction();
+}else {
+    alert('else');
+	}
+}
+</script>
+</head>
+
+<body onload="myFunction()">
+<button onclick="myFunction1()">Play Game</button>
+
+<p id="demo"></p>
+
+<div id="wrapper">
+
+<img onclick="higherFunc()" src="higher.gif" alt="higherorlower2" height="250px" width="200px"><br/>
+<p id="num1"></p> <p>+</p> <p id="num2"></p>
+<img onclick="lowerFunc()" src="lower.gif" alt="higherorlower2" height="250px" width="200px">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<html>
+<HEAD>
+
+<HEAD>
+<title>Maths Quiz</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script language="JavaScript">
+correct=0;
+wrong=0;
+
+function random(maxValue) {
+day= new Date();
+hour= day.getHours();
+min=day.getMinutes();
+sec=day.getSeconds();
+mili=day.getTime()
+return(((hour*3600)+(min*60)+(sec)+mili) % maxValue);
+}
+function ranom(maxValue) {
+day= new Date();
+mil=day.getTime();
+return((mil) % maxValue);
+}
+
+function add() {
+for (i = 0; i < 10; i++) {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=50;
+else {
+maxValue=500;
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA + numB;
+Answer=window.prompt(  numA + "+"  + numB +  " = ", "");
+ans();
+}
+}
+function subtract() {
+for (i = 0; i < 10; i++) {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else
+{if(document.quizform.arithmetic[1].checked)
+maxValue=50;
+else {
+maxValue=500
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA - numB;
+Answer=window.prompt(  numA + "-"  + numB+  " = ", 0);
+ans()
+}
+}
+function divide() {
+for (i = 0; i < 10; i++) {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=50;
+else {
+maxValue=500
+   }
+}
+numA=random(maxValue)+1;
+numB=ranom(maxValue)+1;
+numC=numA / numB;
+numC=Math.round(numC)
+window.alert("Please round your answer off:\n"
++".5 or higher rounds one number up\n"
++".4 or lower rounds one number down");
+Answer=window.prompt(  numA + "/"  + numB +  " = ", 0);
+ans()
+}
+}
+function multiply() {
+for (i = 0; i < 10; i++) {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=50;
+else {
+maxValue=500
+   }
+}
+numA=random(maxValue);
+numB=ranom(maxValue);
+numC=numA * numB;
+Answer=window.prompt(  numA + "*"  + numB +  " = ", 0);
+ans();
+}
+}
+function check() {
+if ((correct+wrong) != 0) {
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";
+alert("YOUR SCORE:  " + score + "\n" 
++ correct + " correct\n"
++ wrong + " incorrect")
+}
+else alert("You have not completed any exercises yet.");
+}
+function ans() {
+if (Answer == numC) {
+correct++;
+msg = "Congratulations, your answer is correct.";
+}
+else {
+wrong++;
+msg = "Oops!  " + Answer + " is incorrect.\n\n"
++ "The correct answer was " +numC + ".";
+   }
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";
+alert(msg + "\n\nYOUR SCORE:  " + score + "\n" 
++ correct + " correct\n"
++ wrong + " incorrect")
+   
+}
+</script>
+</head>
+
+
+<body>
+
+<div id="wrapper">
+<br>
+<br>
+<br>
+<br>
+<br>
+<form name=quizform>
+<center>
+<input type=button value="add" onClick="add()">
+<input type=button value="subtract" onClick="subtract()">
+<input type=button value="multiply" onClick="multiply()">
+<input type=button value="divide" onClick="divide()">
+<br>
+<br>
+<input type="radio" name="arithmetic" id="radio1" class="radio">Easy
+<input type="radio" name="arithmetic" id="radio2" class="radio" checked>Moderate
+<input type="radio" name="arithmetic" id="radio3" class="radio">Difficult
+
+<br>
+<br>
+<input type=button value="Check Score" onClick="check()">
+<input type=button value="Reset Score" onClick="javascript:correct=0;wrong=0;">
+</center>
+</form>
+</div>
+
+</body>
+
+
+</html>
